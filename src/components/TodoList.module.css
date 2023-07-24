@@ -1,0 +1,153 @@
+.taskForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.857rem;
+  gap: 0.857rem;
+  width: 100%;
+  max-width: 776px;
+  height: 54px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  width: 100%;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  margin-top: 0.5em;
+  flex: 1;
+  border-radius: 8px;
+  color: var(--gray-300);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+  transition: all 0.2s;
+  filter: drop-shadow(0px 4px 4px #0000);
+}
+
+.content:focus {
+  color: var(--gray-100);
+  border-color: var(--purple-300);
+  outline: 1px solid var(--purple-300);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  background-color: var(--blue-400);
+  color: var(--gray-100);
+  padding: 1rem;
+  gap: 0.5em;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--purple-300);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 776px;
+  position: absolute;
+  top: 10rem;
+  color: var(--gray-100);
+  padding: 0 20px;
+}
+
+.overviewBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  width: 100%;
+}
+.overview {
+  width: 100%;
+  max-width: 776px;
+  display: flex;
+  margin: 3.5rem auto 0;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0 20px;
+}
+
+.counter,
+.counterTwo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter p {
+  color: var(--blue-300);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.counterTwo p {
+  color: var(--purple-300);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.counter span,
+.counterTwo span {
+  background: var(--gray-400);
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--gray-100);
+  transition: all 0.2s;
+}
+
+.noTasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 776px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 776px;
+  height: 244px;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  padding: 64px;
+  gap: 1rem;
+  color: var(--gray-400);
+  font-weight: bold;
+}
+
+.tasksContainer p,
+.tasksContainer span {
+  text-align: center;
+}
+
+.tasksContainer span {
+  font-weight: normal;
+}
+
+.tasksContainer img {
+  height: 56px;
+}

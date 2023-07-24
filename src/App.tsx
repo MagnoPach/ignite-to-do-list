@@ -1,14 +1,10 @@
-import './global.css';
-import { Home } from './Pages/Home';
+import "./global.css";
+import Home from "./pages/Home";
 
-
-
-export function App() {
-
+export default function App() {
   return (
     <div>
       <Home />
     </div>
-  )
+  );
 }
-

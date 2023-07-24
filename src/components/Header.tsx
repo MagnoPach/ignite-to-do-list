@@ -1,17 +1,16 @@
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 
-import logo from '../assets/logo.svg';
+import logo from "../assets/logo.svg";
 
-export function Header() {
-
+export default function Header() {
   return (
     <article className={styles.headerContainer}>
       <strong className={styles.header}>
         <img src={logo} alt="Logotipo ToDo" />
-        <p>to<span>do</span></p>
+        <p>
+          to<span>do</span>
+        </p>
       </strong>
-
     </article>
-  )
-};
-
+  );
+}
