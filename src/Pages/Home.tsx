@@ -2,7 +2,7 @@ import Header from "../components/Header";
 
 import TodoList from "../components/TodoList";
 
-export default function Home() {
+export function Home() {
   return (
     <div>
       <Header />
