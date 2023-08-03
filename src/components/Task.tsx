@@ -26,6 +26,7 @@ export default function Task({
             type="checkbox"
             id={id}
             onClick={handleCheckTaskIsComplete}
+            checked={isCompleted}
           />
 
           <label>

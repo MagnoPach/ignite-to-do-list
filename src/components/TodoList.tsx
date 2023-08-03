@@ -9,14 +9,33 @@ import { TaskProps } from "../interfaces";
 
 export default function TodoList() {
   const [completedTasks, setCompletedTasks] = useState<number>(0);
-  const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [tasks, setTasks] = useState<TaskProps[]>(getTasksFromStorage());
   const [textTask, setTaskText] = useState<string>("");
 
   const hasTasks = tasks.length > 0;
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setTasksAtStorage();
+  }, [tasks]);
 
-  const createTask = (event: FormEvent) => {
+  function getTasksFromStorage() {
+    const storedStateAsJson = localStorage.getItem(
+      "@ignite-to-do-list:tasks-state-1.0.0"
+    );
+
+    if (storedStateAsJson) {
+      return JSON.parse(storedStateAsJson);
+    }
+    return [];
+  }
+
+  function setTasksAtStorage() {
+    const stateJSON = JSON.stringify(tasks);
+
+    localStorage.setItem("@ignite-to-do-list:tasks-state-1.0.0", stateJSON);
+  }
+
+  function createTask(event: FormEvent) {
     event.preventDefault();
 
     if (!textTask) {
@@ -32,7 +51,7 @@ export default function TodoList() {
     setTasks([...tasks, newTask]);
 
     setTaskText("");
-  };
+  }
 
   function handleTextChange(event: ChangeEvent<HTMLInputElement>) {
     setTaskText(event.target.value);
@@ -62,11 +81,14 @@ export default function TodoList() {
   }
 
   function checkTaskIsComplete(id: string) {
-    tasks.map((task) => {
+    const newTasksState = tasks.map((task) => {
       if (task.id === id) {
-        task.isCompleted = !task.isCompleted;
+        return { ...task, isCompleted: (task.isCompleted = !task.isCompleted) };
+      } else {
+        return task;
       }
     });
+    setTasks(newTasksState);
     handleCompletedTasks();
   }
 
